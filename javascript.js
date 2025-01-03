@@ -8,3 +8,15 @@ function getComputerChoice() {
     else if (computerChoice === 3)
         return "scissors"
 }
+
+function getHumanChoice() {
+    const humanChoice = prompt("Rock, Paper, or Scissors?")
+
+    if (humanChoice.toLowerCase() == "rock")
+        return "rock"
+    else if (humanChoice.toLowerCase() == "paper")
+        return "paper"
+    else if (humanChoice.toLowerCase() == "scissors")
+        return "scissors"
+    else return "invalid choice" 
+}
