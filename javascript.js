@@ -1,5 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
+playGame()
 
 function getComputerChoice() { 
     const computerChoice = Math.floor(Math.random() * 3) + 1;
@@ -25,8 +26,7 @@ function getHumanChoice() {
 }
 
 function playGame() {
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
+
     function playRound(humanChoice, computerChoice) {
         if (humanChoice == "rock" && computerChoice == "scissors"){
             console.log("You win! Rock beats Scissors.")
@@ -46,15 +46,27 @@ function playGame() {
         } else if (humanChoice == "paper" && computerChoice == "scissors"){
             console.log("You lose! Scissors beats Paper.")
             computerScore++
-        } else if (humanChoice == "rock" && computerChoice == "rock")
+        } else if (humanChoice == "rock" && computerChoice == "rock"){
             console.log("It's a tie! Both of you have chosen Rock.")
-        else if (humanChoice == "paper" && computerChoice == "paper")
+            humanChoice++
+            computerChoice++
+        }
+        else if (humanChoice == "paper" && computerChoice == "paper"){
             console.log("It's a tie! Both of you have chosen Paper.")
-        else if (humanChoice == "scissors" && computerChoice == "scissors.")
+            humanChoice++
+            computerChoice++
+        }
+        else if (humanChoice == "scissors" && computerChoice == "scissors."){
             console.log("It's a tie! Both of you have chosen Scissors")
+            humanChoice++
+            computerChoice++
+        }
         else if (humanChoice == "invalid choice")
             console.log("BOO")
     }
+
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
 
     playRound (humanSelection, computerSelection)
     playRound (humanSelection, computerSelection)
