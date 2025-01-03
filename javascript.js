@@ -48,30 +48,32 @@ function playGame() {
             computerScore++
         } else if (humanChoice == "rock" && computerChoice == "rock"){
             console.log("It's a tie! Both of you have chosen Rock.")
-            humanChoice++
-            computerChoice++
+            humanScore++
+            computerScore++
         }
         else if (humanChoice == "paper" && computerChoice == "paper"){
             console.log("It's a tie! Both of you have chosen Paper.")
-            humanChoice++
-            computerChoice++
+            humanScore++
+            computerScore++
         }
         else if (humanChoice == "scissors" && computerChoice == "scissors."){
             console.log("It's a tie! Both of you have chosen Scissors")
-            humanChoice++
-            computerChoice++
+            humanScore++
+            computerScore++
         }
         else if (humanChoice == "invalid choice")
             console.log("BOO")
     }
 
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
+    let humanSelection;
+    let computerSelection;
+    const numberOfRounds = 5;
 
-    playRound (humanSelection, computerSelection)
-    playRound (humanSelection, computerSelection)
-    playRound (humanSelection, computerSelection)
-    playRound (humanSelection, computerSelection)
-    playRound (humanSelection, computerSelection)
+    for (let i=0; i<numberOfRounds; i++){
+        humanSelection = getHumanChoice();
+        computerSelection = getComputerChoice();
+        playRound (humanSelection, computerSelection)
+    }
+
     console.log("Your score: " + humanScore + "\nComputer Score: "  + computerScore)
 }
