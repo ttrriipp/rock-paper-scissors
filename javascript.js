@@ -1,5 +1,5 @@
-let humanScore = 0;
-let computerScore = 0;
+let humanSelection;
+let computerSelection;
 playGame()
 
 function getComputerChoice() { 
@@ -22,10 +22,12 @@ function getHumanChoice() {
         return "paper"
     else if (humanChoice.toLowerCase() == "scissors")
         return "scissors"
-    else return "invalid choice" 
+    else return "invalid choice"
 }
 
 function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
 
     function playRound(humanChoice, computerChoice) {
         if (humanChoice == "rock" && computerChoice == "scissors"){
@@ -61,12 +63,11 @@ function playGame() {
             humanScore++
             computerScore++
         }
-        else if (humanChoice == "invalid choice")
-            console.log("BOO")
+        else if (humanChoice == "invalid choice"){
+            console.log("WHAT? Computer wins that")
+            computerScore++
+        }
     }
-
-    let humanSelection;
-    let computerSelection;
     const numberOfRounds = 5;
 
     for (let i=0; i<numberOfRounds; i++){
@@ -76,4 +77,9 @@ function playGame() {
     }
 
     console.log("Your score: " + humanScore + "\nComputer Score: "  + computerScore)
+    if (humanScore < computerScore)
+        console.log("Computer Wins!")
+    else if (humanScore == computerScore)
+        console.log("It's a tie!")
+    else console.log("You win!")
 }
