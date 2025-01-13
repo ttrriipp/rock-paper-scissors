@@ -28,6 +28,7 @@ function playGame() {
     let humanScore = 0;
     let computerScore = 0;
     let choices = document.querySelector('#choices-section');
+    let results = document.querySelector('#results');
 
     choices.addEventListener('click', (event) => {
         let target = event.target;
@@ -46,47 +47,51 @@ function playGame() {
     });
 
     function playRound(humanChoice, computerChoice) {
-        let results = document.querySelector('#results');
 
-        if (humanChoice == "rock" && computerChoice == "scissors"){
-            results.textContent = "You win! Rock beats Scissors.";
-            humanScore++;
-        } else if (humanChoice == "paper" && computerChoice == "rock"){
-            results.textContent = "You win! Papers beats Rock.";
-            humanScore++;
-        } else if (humanChoice == "scissors" && computerChoice == "paper"){
-            results.textContent = "You win! Scissors beats Paper.";
-            humanScore++;
-        } else if (humanChoice == "scissors" && computerChoice == "rock"){
-            results.textContent = "You lose! Rock beats Scissors.";
-            computerScore++;
-        } else if (humanChoice == "rock" && computerChoice == "paper"){
-            results.textContent = "You lose! Paper beats Rock.";
-            computerScore++;
-        } else if (humanChoice == "paper" && computerChoice == "scissors"){
-            results.textContent = "You lose! Scissors beats Paper.";
-            computerScore++;
-        } else if (humanChoice == "rock" && computerChoice == "rock"){
-            results.textContent = "It's a tie! Both of you are Rock.";  
-            humanScore++;
-            computerScore++;
-        } else if (humanChoice == "paper" && computerChoice == "paper"){
-            results.textContent = "It's a tie! Both of you are Paper.";
-            humanScore++;
-            computerScore++;
-        } else if (humanChoice == "scissors" && computerChoice == "scissors."){
-            results.textContent = "It's a tie! Both of you are Scissors.";
-            humanScore++;
-            computerScore++;
+        if (humanScore === 5) {
+        results.textContent = "Winner: You!!!";
+        } else if (computerScore === 5) {
+        results.textContent = "Winner: Computer :((("
+        } else if (humanScore === 5 && computerScore === 5) 
+        results.textContent = "It's a tie! :O"
+        else {
+            if (humanChoice == "rock" && computerChoice == "scissors"){
+                results.textContent = "You win! Rock beats Scissors.";
+                humanScore++;
+            } else if (humanChoice == "paper" && computerChoice == "rock"){
+                results.textContent = "You win! Papers beats Rock.";
+                humanScore++;
+            } else if (humanChoice == "scissors" && computerChoice == "paper"){
+                results.textContent = "You win! Scissors beats Paper.";
+                humanScore++;
+            } else if (humanChoice == "scissors" && computerChoice == "rock"){
+                results.textContent = "You lose! Rock beats Scissors.";
+                computerScore++;
+            } else if (humanChoice == "rock" && computerChoice == "paper"){
+                results.textContent = "You lose! Paper beats Rock.";
+                computerScore++;
+            } else if (humanChoice == "paper" && computerChoice == "scissors"){
+                results.textContent = "You lose! Scissors beats Paper.";
+                computerScore++;
+            } else if (humanChoice == "rock" && computerChoice == "rock"){
+                results.textContent = "It's a tie! Both of you are Rock.";  
+                humanScore++;
+                computerScore++;
+            } else if (humanChoice == "paper" && computerChoice == "paper"){
+                results.textContent = "It's a tie! Both of you are Paper.";
+                humanScore++;
+                computerScore++;
+            } else if (humanChoice == "scissors" && computerChoice == "scissors."){
+                results.textContent = "It's a tie! Both of you are Scissors.";
+                humanScore++;
+                computerScore++;
+            }
         }
-        let humanScoreDisplay = document.querySelector('#human-score');
+    let humanScoreDisplay = document.querySelector('#human-score');
     let computerScoreDisplay = document.querySelector('#computer-score');
 
 
     humanScoreDisplay.textContent = "Your score: " + humanScore;
     computerScoreDisplay.textContent = "Computer score: " + computerScore;
     }
-
-    
-
 }
