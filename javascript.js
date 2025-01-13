@@ -7,16 +7,19 @@ choices.addEventListener('click', (event) => {
 
     switch(target.id) {
         case 'rock':
-            console.log("rock");
+            playRound("rock", computerChoice);
             break;
         case 'paper':
-            console.log("paper");
+            playRound("paper", computerChoice); 
             break;
         case 'scissors':
-            console.log("scissors");                        
+            playRound("scissors", computerChoice);               
             break;
     }
 });
+
+
+
 
 
 
