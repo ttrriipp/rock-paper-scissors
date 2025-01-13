@@ -48,12 +48,12 @@ function playGame() {
 
     function playRound(humanChoice, computerChoice) {
 
-        if (humanScore === 5) {
+        if (humanScore === 5 && computerScore === 5) 
+        results.textContent = "It's a tie! :O";
+        else if (humanScore === 5)
         results.textContent = "Winner: You!!!";
-        } else if (computerScore === 5) {
-        results.textContent = "Winner: Computer :((("
-        } else if (humanScore === 5 && computerScore === 5) 
-        results.textContent = "It's a tie! :O"
+        else if (computerScore === 5) 
+        results.textContent = "Winner: Computer :(((";
         else {
             if (humanChoice == "rock" && computerChoice == "scissors"){
                 results.textContent = "You win! Rock beats Scissors.";
