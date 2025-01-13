@@ -79,5 +79,14 @@ function playGame() {
             humanScore++;
             computerScore++;
         }
+        let humanScoreDisplay = document.querySelector('#human-score');
+    let computerScoreDisplay = document.querySelector('#computer-score');
+
+
+    humanScoreDisplay.textContent = "Your score: " + humanScore;
+    computerScoreDisplay.textContent = "Computer score: " + computerScore;
     }
+
+    
+
 }
