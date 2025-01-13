@@ -7,17 +7,18 @@ choices.addEventListener('click', (event) => {
 
     switch(target.id) {
         case 'rock':
-            
+            console.log("rock");
             break;
         case 'paper':
-
+            console.log("paper");
             break;
-
         case 'scissors':
-
+            console.log("scissors");                        
             break;
     }
-})
+});
+
+
 
 function getComputerChoice() { 
     const computerChoice = Math.floor(Math.random() * 3) + 1;
