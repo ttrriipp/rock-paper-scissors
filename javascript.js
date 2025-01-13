@@ -66,13 +66,7 @@ function playGame() {
             computerScore++
         }
     }
-    const numberOfRounds = 5;
-
-    for (let i=0; i<numberOfRounds; i++){
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-        playRound (humanSelection, computerSelection)
-    }
+  
 
     console.log("Your score: " + humanScore + "\nComputer Score: "  + computerScore)
     if (humanScore < computerScore)
