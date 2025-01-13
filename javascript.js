@@ -1,5 +1,24 @@
 playGame();
 
+let choices = document.querySelector('.choices-section');
+
+choices.addEventListener('click', (event) => {
+    let target = event.target;
+
+    switch(target.id) {
+        case 'rock':
+            
+            break;
+        case 'paper':
+
+            break;
+
+        case 'scissors':
+
+            break;
+    }
+})
+
 function getComputerChoice() { 
     const computerChoice = Math.floor(Math.random() * 3) + 1;
 
